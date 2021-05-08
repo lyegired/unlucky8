@@ -22,7 +22,7 @@ h1{
     font-size: 17px;
 }
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: #dddd;
     color: black;
 }
 
@@ -31,8 +31,17 @@ h1{
 
 }
 .friendlist th {
-font-weight: bold; }
+font-weight: bold;
+}
 
+.listEvents tr{
+    padding: 10px 50px;
+    text-align: center;
+}
+
+.eventButton{
+
+}
 .eventlist h1{
 text-align: center;
 alignment: center;
