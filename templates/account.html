@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="UNCC Notes App">
+        <title>UNCC Notes App - New Note</title>
+        <!-- styles -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+     <h1>Welcome {{user}} to the Event App!</h1>
+       <nav>
+           <div class="topnav">
+            <a href="{{ url_for('home')}}"> Home </a>
+            <a href="{{url_for('get_events')}}"> My Events</a>
+           <a href="{{url_for('new_event')}}"> Add Event</a>
+           <a href="{{url_for('get_friends')}}"> Friend List</a>
+           <a href="{{url_for('get_reports')}}"> Reported Events </a>
+           <a href="{{url_for('get_account')}}"> My Account</a>
+               <a href="{{ url_for('logout')}}">Logout</a>
+
+           </div>
+        </nav>
+
+       <div class="UserNames">
+                <br><p>First Name : {{account.first_name }}</p>
+                <p>Last Name : {{account.last_name}}</p>
+                <p>Email : {{account.email}}</p>
+       </div>
+
+        <td>
+                    <form action = "{{ url_for('edit_account', user_id= account.id) }}">
+                        <input type="submit" value="Edit Account">
+                    </form>
+
+    </body>
+</html>
