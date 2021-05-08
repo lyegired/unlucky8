@@ -18,7 +18,6 @@ class Event(db.Model):
         self.user_id = user_id
 
 
-
 class User(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     first_name = db.Column("first_name", db.String(100))

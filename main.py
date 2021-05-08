@@ -122,10 +122,10 @@ def get_events():
 @app.route('/events/<int:event_id>')
 def get_event(event_id):
     if session.get('user'):
-        my_event = db.session.query(Event).filter_by(id=event_id, user_id=session['user_id']).one()
+        my_event = db.session.query(Event).filter_by(id=event_id, user_id=session['user_id']).all()
         form_comment = CommentForm()
         event_rsvps = db.session.query(RSVP).filter_by(event_id=event_id).all()
-        form_rsvp  = RSVPForm()
+        form_rsvp = RSVPForm()
         print(event_rsvps)
 
         return render_template('event.html', event=my_event, user=session['user'], form_comment=form_comment, form_rsvp=form_rsvp, rsvps=event_rsvps )
@@ -357,8 +357,9 @@ def new_report(event_id):
            new_report= report(event_id,session['user_id'] )
            db.session.add(new_report)
            db.session.commit()
-
-       return redirect(url_for('get_event', event_id=event_id))
+       #my_report = db.session.query(User).filter_by(id=user_id).one()
+       #return render_template('reports.html', account=my_report, user=session['user'])
+       return redirect(url_for('get_reports', user_id=User.id))
 
    else:
        return redirect(url_for('login'))
@@ -367,7 +368,7 @@ def new_report(event_id):
 def get_reports():
     if session.get('user'):
 
-                                  # (user)                                       .all
+        # (user)                                       .all
         event_reports = db.session.query(report).all()
 
         return render_template('reports.html', user=session['user'], reports=event_reports )

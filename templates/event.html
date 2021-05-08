@@ -9,6 +9,7 @@
        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
    </head>
    <body>
+   <h1>Welcome {{user}} to the Events App!</h1>
    <div class = "topnav">
    <nav>
 
@@ -21,7 +22,7 @@
 
        </nav>
        </div>
-       <h1>Welcome {{user}} to the Events App!</h1>
+
        <h1>Event details</h1>
 
        <table>
@@ -50,13 +51,6 @@
    </ul>
  {% endif %}
 {% endif %}
-<form action="{{ url_for('new_rsvp', event_id=event.id) }}" method="post">
- <div class="formwrapper">
-   <h2 class="title">Do you want to RSVP to this event? : </h2>
-
-   {{ form_rsvp.submit }}
- </div>
-</form>
 
 
     {% if event.comments %}

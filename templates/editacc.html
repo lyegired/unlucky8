@@ -22,14 +22,11 @@
             {% else %}
                     <a href="{{ url_for('login')}}">Sign In</a>
                     <a href="{{ url_for('register')}}">Register</a>
-
             {% endif %}
         </nav>
         </div>
-
-        <h2>Use this site to maintain and organize your events.</h2>
         <div class="formwrapper">
-            <h2 class="title">Register</h2>
+            <h2 class="title">Edit Account</h2>
             <form method="POST" action={{"/account/edit/"+user_id}}>
                 <div class="form-field">{{ form.firstname.label }} {{ form.firstname }}
                     {% if form.firstname.errors %}
