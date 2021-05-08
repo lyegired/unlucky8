@@ -59,8 +59,8 @@
                 <td>{{ event.text }}</td>
                 
                 <td>
-                    <form method="POST" action = "{{ url_for('new_rsvp', event_id= event.id) }}" class="RSVPbutton">
-                        <input type="submit" value="RSVP" class="RSVPbutton">
+                    <form action = "{{ url_for('get_event', event_id= event.id) }}">
+                        <input type="submit" value="RSVP" class="eventButton">
                     </form>
                 </td>
                 <td>
