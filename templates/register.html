@@ -7,28 +7,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
 </head>
     <body>
-     <h1>Welcome {{user}} to the Event App!</h1>
+     <h1>Welcome {{user}} to Plan 8!</h1>
         <div class="topnav">
         <nav>
-            <a href="{{ url_for('home')}}"> Home </a>
-            <a href="{{url_for('get_events')}}"> My Events </a>
-            <a href="{{url_for('new_event')}}"> Add Event</a>
 
-
-        </nav>
             {% if user %}
-            <nav>
-                <a href="{{ url_for('logout')}}">Logout</a>
-            </nav>
+                <a href="{{ url_for('home')}}" class="left"> Home </a>
+            <a href="{{url_for('get_events')}}" class="left"> My Events </a>
+            <a href="{{url_for('new_event')}}" class="left"> Add Event</a>
+                <a href="{{ url_for('logout')}}" class="right">Logout</a>
             {% else %}
-                <nav>
-                    <a href="{{ url_for('login')}}">Sign In</a>
-                    <a href="{{ url_for('register')}}">Register</a>
+                    <a href="{{ url_for('login')}}" class="right">Sign In</a>
+                    <a href="{{ url_for('register')}}" class="right">Register</a>
                 </nav>
             {% endif %}
         </div>
-
-        <h2>Use this site to maintain and organize your events.</h2>
         <div class="formwrapper">
             <h2 class="title">Register</h2>
             <form method="POST" action="/register">

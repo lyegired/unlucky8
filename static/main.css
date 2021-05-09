@@ -9,11 +9,17 @@ h1{
     color: white;
     background: black;
 }
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
 .topnav {
     overflow: hidden;
     background-color: teal;
     padding: 20px;
-    text-align: center;
 }
 .topnav a {
     color: #f2f2f2;
@@ -40,7 +46,11 @@ font-weight: bold;
 }
 
 .header{
-    text-align: center;
+    padding: 50px;
+}
+
+.formwrapper{
+    color: teal;
 }
 
 .eventlist h1{
@@ -50,13 +60,12 @@ alignment: center;
 
 input[type='submit']
 {
-    background-color: lightpink;
-    color: black;
+    background-color: teal;
+    color: white;
     font-size: 15px;
     padding:5px;
     font-family: Palatino Linotype, sans-serif;
 }
-
 
 .UserNames{
 font-weight: bold;}

@@ -9,24 +9,20 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     </head>
    <body>
-    <h1>Welcome {{user}} to the Event App!</h1>
+    <h1>Welcome {{user}} to Plan 8!</h1>
         <div class="topnav">
         <nav>
-            <a href="{{ url_for('home')}}"> Home   </a>
-            <a href="{{url_for('get_events')}}">   My Events   </a>
-            <a href="{{url_for('new_event')}}">   Add Event  </a>
-            <a href="{{url_for('get_friends')}}"> Friend List </a>
-            <a href="{{url_for('get_reports')}}"> Reported Events </a>
-{#        </nav>#}
             {% if user %}
-{#            <nav>#}
-                <a href="{{url_for('get_account')}}"> My Account</a>
-                <a href="{{ url_for('logout')}}">Logout</a>
-{#            </nav>#}
+                <a href="{{ url_for('home')}}" class="left"> Home   </a>
+            <a href="{{url_for('get_events')}}" class="left">   My Events   </a>
+            <a href="{{url_for('new_event')}}" class="left">   Add Event  </a>
+            <a href="{{url_for('get_friends')}}" class="left"> Friend List </a>
+            <a href="{{url_for('get_reports')}}" class="left"> Reported Events </a>
+                <a href="{{ url_for('logout')}}" class="right">Logout</a>
+                <a href="{{url_for('get_account')}}" class="right"> My Account</a>
             {% else %}
-{#                <nav>#}
-                    <a href="{{ url_for('login')}}">SIGN-IN</a>
-                    <a href="{{ url_for('register')}}">REGISTER</a>
+                    <a href="{{ url_for('login')}}" class="right">SIGN-IN</a>
+                    <a href="{{ url_for('register')}}" class="right">REGISTER</a>
             {% endif %}
         </nav>
         </div>
