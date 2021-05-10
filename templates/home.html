@@ -48,11 +48,10 @@
                 </tr>
                 {% for event in index %}
                 <tr>
-                    <td><a href="{{ url_for('get_event', event_id=event.id) }}">{{ event.title }}</a></td>
-
-                <td>{{ event.date }}</td>
-                <td>{{ event.address }}</td>
-                <td>{{ event.text }}</td>
+                    <td>{{ event.title }}</td>
+                    <td>{{ event.date }}</td>
+                    <td>{{ event.address }}</td>
+                    <td>{{ event.text }}</td>
 
                 <td>
                     <form action = "{{ url_for('new_rsvp', event_id= event.id) }}" method="post">
