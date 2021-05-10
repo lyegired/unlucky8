@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
 </head>
     <body>
-     <h1>Welcome {{user}} to Plan 8!</h1>
+     <h1 class="middle">Welcome {{user}} to Plan 8!</h1>
         <div class="topnav">
         <nav>
 
@@ -16,7 +16,6 @@
                 <a href="{{ url_for('home')}}" class="left"> Home </a>
             <a href="{{url_for('get_events')}}" class="left"> My Events </a>
             <a href="{{url_for('new_event')}}" class="left"> Add Event</a>
-
             <a href="{{url_for('new_event')}}" class="left"> Friend List</a>
             <a href="{{url_for('get_reports')}}" class="left"> Reported Events </a>
                 <a href="{{ url_for('logout')}}" class="right">Logout</a>

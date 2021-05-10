@@ -45,6 +45,9 @@ font-weight: bold;
     text-align: center;
 }
 
+.middle{
+    text-align: center;
+}
 .header{
     padding: 50px;
 }
