@@ -146,7 +146,7 @@ def new_event():
             from datetime import date
             date = request.form['date']
             #format date mm/dd/yyyy
-            newEntry = Event(title, text, date, session['user_id'])
+            newEntry = Event(title, text, date, address, session['user_id'])
             db.session.add(newEntry)
             db.session.commit()
 

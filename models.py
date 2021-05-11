@@ -11,10 +11,11 @@ class Event(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     comments = db.relationship("Comment", backref="event", cascade="all, delete-orphan", lazy=True)
 
-    def __init__(self, title, text, date, user_id):
+    def __init__(self, title, text, date, address, user_id):
         self.title = title
         self.text = text
         self.date = date
+        self.address = address
         self.user_id = user_id
 
 
