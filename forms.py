@@ -60,7 +60,7 @@ class CommentForm(FlaskForm):
     comment = TextAreaField('Reminder:',validators=[Length(min=1)])
 
 
-    submit = SubmitField('Add Comment')
+    submit = SubmitField('Add Reminder')
 
 class RSVPForm(FlaskForm):
     class Meta:

@@ -122,7 +122,7 @@ def get_events():
 @app.route('/events/<int:event_id>')
 def get_event(event_id):
     if session.get('user'):
-        my_event = db.session.query(Event).filter_by(id=event_id, user_id=session['user_id']).all()
+        my_event = db.session.query(Event).filter_by(id=event_id).one()
         form_comment = CommentForm()
         event_rsvps = db.session.query(RSVP).filter_by(event_id=event_id).all()
         form_rsvp = RSVPForm()

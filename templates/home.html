@@ -53,15 +53,24 @@
                     <td>{{ event.address }}</td>
                     <td>{{ event.text }}</td>
 
+
+                    <td>
+                    <form action = "{{ url_for('get_event', event_id= event.id) }}">
+                        <input type="submit" value="View Event">
+                    </form>
+                </td>
                 <td>
                     <form action = "{{ url_for('new_rsvp', event_id= event.id) }}" method="post">
                         <input type="submit" value="RSVP">
                     </form>
+                </td>
+
                 <td>
                     <form method="POST" action = "{{ url_for('new_report', event_id= event.id) }}" class="Reportbutton">
                         <input type="submit" value="Report">
                     </form>
                 </td>
+
                 </tr>
                 {% endfor %}
             </table>
